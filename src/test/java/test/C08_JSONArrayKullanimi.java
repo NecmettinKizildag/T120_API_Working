@@ -66,8 +66,18 @@ public class C08_JSONArrayKullanimi {
         personal.put("address",adres);
         personal.put("phoneNumbers",tel);
 
-        System.out.println("personal = " + personal);
+        //System.out.println("personal = " + personal);
 
+        System.out.println("kisi adi = " + personal.get("firstName"));
+        System.out.println("kisi soyadi = " + personal.get("lastName"));
+        System.out.println("kisi yasi = " + personal.get("age"));
+        System.out.println("kisi adres-sokak/cadde = " + personal.getJSONObject("address").get("streetAddress"));
+        System.out.println("kisi adres-sehir = " + personal.getJSONObject("address").get("city"));
+        System.out.println("kisi adres-posta kodu = " + personal.getJSONObject("address").get("postalCode"));
+        System.out.println("kisi telefon 1 tip = " + personal.getJSONArray("phoneNumbers").getJSONObject(0).get("type"));
+        System.out.println("kisi telefon 1 numara = " + personal.getJSONArray("phoneNumbers").getJSONObject(0).get("number"));
+        System.out.println("kisi telefon 2 tip = " + personal.getJSONArray("phoneNumbers").getJSONObject(0).get("type"));
+        System.out.println("kisi telefon 2 numara = " + personal.getJSONArray("phoneNumbers").getJSONObject(0).get("number"));
 
     }
 }
