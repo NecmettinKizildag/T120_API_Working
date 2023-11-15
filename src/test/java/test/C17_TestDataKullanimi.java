@@ -31,7 +31,7 @@ response body'sinin asagida verilen ile ayni oldugunu test ediniz
     @Test
     public void get01(){
         // endpoint hazirlama
-        specJsonPlace.pathParams("pp1","post","pp2",22);
+        specJsonPlace.pathParams("pp1","posts","pp2",22);
 
         // expected data olusturma
         TestDataJSONPlace testDataJSONPlace = new TestDataJSONPlace();
@@ -43,6 +43,7 @@ response body'sinin asagida verilen ile ayni oldugunu test ediniz
         JsonPath respJP = response.jsonPath();
 
         // assertion
+        Assert.assertEquals(testDataJSONPlace.okStatusKodu,response.getStatusCode());
         Assert.assertEquals(expData.get("userId"),respJP.get("userId"));
         Assert.assertEquals(expData.get("id"),respJP.get("id"));
         Assert.assertEquals(expData.get("title"),respJP.get("title"));

@@ -4,6 +4,9 @@ import org.json.JSONObject;
 
 public class TestDataJSONPlace {
 
+    public int okStatusKodu = 200;
+
+
     public JSONObject expBodyOlusturJSON(){
 
         JSONObject expBody = new JSONObject();
@@ -14,5 +17,17 @@ public class TestDataJSONPlace {
         expBody.put("body","eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse");
 
         return expBody;
+    }
+
+    public JSONObject reqBodyOlusturJSON(){
+
+        JSONObject reqBody = new JSONObject();
+
+        reqBody.put("title","Ali");
+        reqBody.put("body","Merhaba");
+        reqBody.put("userId",10);
+        reqBody.put("id",70);
+
+        return  reqBody;
     }
 }
