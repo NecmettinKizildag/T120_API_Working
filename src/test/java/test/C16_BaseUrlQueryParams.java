@@ -36,14 +36,14 @@ public class C16_BaseUrlQueryParams extends herOkuAppBaseURL {
         /*
     1-  https://restful-booker.herokuapp.com/booking endpointine bir GET
     request gonderdigimizde donen response'un status code'unun 200 oldugunu
-    ve Response'ta 33071 id'ye sahip bir booking oldugunu test edin
+    ve Response'ta 752 id'ye sahip bir booking oldugunu test edin
  */
 
         specHerOkuApp.pathParam("pp1","booking");
 
         Response response = given().spec(specHerOkuApp).when().get("/{pp1}");
 
-        response.then().assertThat().statusCode(200).body("bookingid", Matchers.hasItem(33071));
+        response.then().assertThat().statusCode(200).body("bookingid", Matchers.hasItem(752));
     }
 
     @Test
