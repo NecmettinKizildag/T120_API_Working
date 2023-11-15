@@ -5,6 +5,8 @@ import org.json.JSONObject;
 public class TestDataJSONPlace {
 
     public int okStatusKodu = 200;
+    public String contentType = "application/json; charset=utf-8";
+    public String connectionHeader = "keep-alive";
 
 
     public JSONObject expBodyOlusturJSON(){
@@ -30,4 +32,6 @@ public class TestDataJSONPlace {
 
         return  reqBody;
     }
+
+
 }
