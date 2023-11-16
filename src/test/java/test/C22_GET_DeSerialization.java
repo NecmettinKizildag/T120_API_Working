@@ -1,6 +1,7 @@
 package test;
 
 import baseUrl.jsonPlaceBaseUrl;
+import org.junit.Test;
 
 
 import static io.restassured.RestAssured.*;
@@ -27,6 +28,9 @@ Response Body
 }
  */
 
+    @Test
+    public void get01(){
 
+    }
 
 }
