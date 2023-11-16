@@ -1,10 +1,16 @@
 package test;
 
 import baseUrl.jsonPlaceBaseUrl;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
+import pojos.JsonPlaceRequestBodyPOJO;
 import testDatas.TestDataJSONPlace;
 
 import java.util.HashMap;
+
+import static io.restassured.RestAssured.given;
 
 public class C23_PUT_PojoClassKullanimi extends jsonPlaceBaseUrl {
 /*
@@ -36,6 +42,20 @@ Response Body Expected
         specJsonPlace.pathParams("pp1","posts","pp2",70);
 
 
+        JsonPlaceRequestBodyPOJO reqData = new JsonPlaceRequestBodyPOJO("Ahmet","Merhaba",10,70);
+
+        JsonPlaceRequestBodyPOJO expData = new JsonPlaceRequestBodyPOJO("Ahmet","Merhaba",10,70);
+
+
+        Response response = given().spec(specJsonPlace).contentType(ContentType.JSON)
+                            .when().body(reqData).put("/{pp1}/{pp2}");
+
+        JsonPlaceRequestBodyPOJO resPOJO = response.as(JsonPlaceRequestBodyPOJO.class);
+
+        Assert.assertEquals(expData.getTitle(),resPOJO.getTitle());
+        Assert.assertEquals(expData.getId(),resPOJO.getId());
+        Assert.assertEquals(expData.getUserId(),resPOJO.getUserId());
+        Assert.assertEquals(expData.getBody(),resPOJO.getBody());
     }
 
 }
